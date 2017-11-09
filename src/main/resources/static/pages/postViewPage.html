@@ -1,0 +1,16 @@
+<div id="content" class="mobileUI-main-content">
+    <div id="content-inner">
+        <article class="is-post is-post-excerpt">
+            <header>
+                <h2><a href="#">{{model.blog.title}}</a></h2>
+            </header>
+            <div class="info">
+
+                <span class="date">{{model.blog.pubDate | date:'yyyy-MM-dd'}}</span>
+            </div>
+            <div ng-bind-html="model.getHtml(model.blog)"></div>
+        </article>
+        <a href="#!/{{model.blog.id}}/edit" class="btn btn-warning">Modify</a>
+        <a onclick="window.history.back()" class="btn btn-info myButton">Back</a>
+    </div>
+</div>

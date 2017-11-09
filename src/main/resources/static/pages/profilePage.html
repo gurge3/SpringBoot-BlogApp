@@ -1,0 +1,28 @@
+<div id="content" class="mobileUI-main-content">
+    <div id="content-inner">
+        <h1><b>Manage your Blog</b></h1>
+        <a href="#!/{{model.userId}}/blog" class="btn btn-success">View My Blog Page</a>
+        <table class="table">
+            <thead>
+            <th>#</th>
+            <th>Date</th>
+            <th>Blog Title</th>
+            <th>Operation</th>
+            </thead>
+            <tbody>
+            <tr ng-repeat="blog in model.blogs">
+                <td>{{blog.id}}</td>
+                <td>{{blog.pubDate | date:'yyyy-MM-dd'}}</td>
+                <td>{{blog.title}}</td>
+                <td><a ng-click="model.deleteBlog(blog.id, $index)" class="btn btn-danger">Delete</a>
+                    <a href="#!/{{blog.id}}/view" class="btn btn-success">View</a>
+                    <a href="#!/{{blog.id}}/edit" class="btn btn-info">Modify</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <a href="#!/{{model.userId}}/createPost" class="btn btn-success">Create A Blog</a>
+        <a href="#!/manageSystem" class="btn btn-danger" ng-show="model.isAdmin">Manage System</a>
+        <a onclick="window.history.back()" class="btn btn-info">Back</a>
+    </div>
+</div>

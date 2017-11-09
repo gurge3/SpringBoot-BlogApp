@@ -1,0 +1,22 @@
+<div id="content" class="mobileUI-main-content">
+    <div id="content-inner">
+        <h1><b>Edit your Blog</b></h1>
+        <div ng-show="model.error" class="alert alert-danger">
+            {{model.error}}
+        </div>
+        <div ng-show="model.message" class="alert alert-info">
+            {{model.message}}
+        </div>
+        <input class="form-control" ng-model="model.blog.title" type="text" placeholder="Title">
+        <div ng-model="model.blog.content"
+             id="htmlEditor"
+             text-angular
+             ta-toolbar="[['h1','h2','h3'],['bold','italics','underline','strikeThrough'],
+        ['ul','ol'],['uploadImage'],['justifyLeft','justifyCenter','justifyRight','justifyFull'],
+        ['indent','outdent'],['html']]">
+        </div>
+        <a class="btn btn-primary myButton" ng-click="model.updateBlog()">Update</a>
+        <a class="btn btn-danger deleteBtn myButton" ng-click="model.deleteBlog()">Delete</a>
+        <a onclick="window.history.back()" class="btn btn-info myButton">Back</a>
+    </div>
+</div>

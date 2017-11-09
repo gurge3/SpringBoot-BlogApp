@@ -1,0 +1,15 @@
+<div id="content" class="mobileUI-main-content">
+    <div id="content-inner">
+        <article class="is-post is-post-excerpt" ng-repeat="blog in model.blogs">
+            <header>
+                <h2><a href="#!/{{blog.id}}/view">{{blog.title}}</a></h2>
+            </header>
+            <div class="info">
+
+                <span class="date">{{blog.pubDate | date:'yyyy-MM-dd'}}</span>
+            </div>
+            <div ng-bind-html="model.getHtml(blog)"></div>
+            <hr>
+        </article>
+    </div>
+</div>

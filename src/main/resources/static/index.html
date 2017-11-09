@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+    <title>Striped </title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,700|Open+Sans+Condensed:300,700"
+          rel="stylesheet"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/sb-admin-2.min.css"/>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/textAngular.css">
+    <link href="css/font-awesome.min.css" rel="stylesheet"/>
+
+    <script src="js/libraries/angular.js"></script>
+    <script src="js/libraries/angular-route.js"></script>
+    <script src="js/libraries/angular-cookies.min.js"></script>
+    <script src="js/libraries/jquery-3.2.1.min.js"></script>
+    <script src="js/libraries/jquery-ui.min.js"></script>
+    <script src="js/libraries/bootstrap.min.js"></script>
+    <script src="js/libraries/ui-bootstrap-2.5.0.min.js"></script>
+    <script src="js/libraries/ng-file-upload-all.min.js"></script>
+    <script src="js/libraries/ui-bootstrap-tpls-2.5.0.min.js"></script>
+    <script src="js/libraries/textAngular-rangy.min.js"></script>
+    <script src="js/libraries/textAngular-sanitize.min.js"></script>
+    <script src="js/libraries/textAngular.min.js"></script>
+    <script src="css/5grid/init.js?use=mobile,desktop,1200px,1000px&amp;mobileUI=1&amp;mobileUI.theme=none"></script>
+    <script src="js/config.js"></script>
+
+    <script src="js/service/userService.js"></script>
+    <script src="js/service/blogService.js"></script>
+
+    <script src="js/controller/loginController.js"></script>
+    <script src="js/controller/registerController.js"></script>
+    <script src="js/controller/profileController.js"></script>
+    <script src="js/controller/postEditController.js"></script>
+    <script src="js/controller/postCreateController.js"></script>
+    <script src="js/controller/manageSystemController.js"></script>
+    <script src="js/controller/uploadImageController.js"></script>
+    <script src="js/controller/postViewController.js"></script>
+    <script src="js/controller/postListViewController.js"></script>
+    <script src="js/controller/navBarController.js"></script>
+
+
+
+    <noscript>
+        <link rel="stylesheet" href="css/5grid/core.css"/>
+        <link rel="stylesheet" href="css/5grid/core-desktop.css"/>
+        <link rel="stylesheet" href="css/5grid/core-1200px.css"/>
+        <link rel="stylesheet" href="css/5grid/core-noscript.css"/>
+        <link rel="stylesheet" href="css/style.css"/>
+        <link rel="stylesheet" href="css/style-desktop.css"/>
+        <link rel="stylesheet" href="css/style-1200px.css"/>
+    </noscript>
+</head>
+
+<body class="left-sidebar" ng-app="BlogProject">
+
+<div class="content" ng-view></div>
+
+<div id="sidebar" ng-controller="navBarController">
+    <div ng-show="isLoggedIn">
+        Welcome: <b>{{getUsername()}}</b>
+        <br>
+        <a href="#!/{{getId()}}/profile">Manage my account</a>
+        <br>
+        <a ng-click="logOut()">Log Out</a>
+    </div>
+    <div ng-show="!isLoggedIn">
+        Guest Mode</b>
+        <br>
+        <a href="#!/login">Login</a>
+    </div>
+    <br>
+    <!-- Logo -->
+    <div id="logo">
+        <h1 class="mobileUI-site-name">Tech</h1>
+    </div>
+</div>
+</body>
+</html>
+
